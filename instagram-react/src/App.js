@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import dotenv from 'dotenv';
 import request from 'superagent';
 
 import Header from './components/Header';
 import Tiles from './components/Tiles';
 
-dotenv.config();
+import Api from './Api';
+const api = new Api();
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends Component {
       isPhotosLoaded: false,
       max_id: '',
     }
-    // Привязка необходима, чтобы сделать this доступным в коллбэке
+    // привязка, чтобы сделать this доступным в коллбэке
     this.fetchPhotos = this.fetchPhotos.bind(this);
   }
 
@@ -27,31 +27,23 @@ class App extends Component {
   }
 
   fetchUser() {
-    const instagram_api_url_user = `https://api.instagram.com/v1/users/self/?access_token=${process.env.REACT_APP_INSTAGRAM_API}`;
-    request
-      .get(instagram_api_url_user)
-      .then((res) => {
-        this.setState({
-          user: res.body.data,
-          isUserLoaded: true
-        })
+    api.fetchUser()
+    .then((res) => {
+      this.setState({
+        user: res.body.data,
+        isUserLoaded: true
       })
+    })
   }
 
   fetchPhotos() {
-    const instagram_api_url = this.state.max_id 
-     ? `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.REACT_APP_INSTAGRAM_API}&count=5&max_id=${this.state.max_id}`
-     : `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.REACT_APP_INSTAGRAM_API}&count=5`;
-    request
-      .get(instagram_api_url)
+    api.fetchPhotos(this.state.max_id)
       .then((res) => {
-        console.log(res.body.pagination.next_max_id);
         this.setState({
           photos: [...this.state.photos, ...res.body.data],
           isPhotosLoaded: true,
           max_id: res.body.pagination.next_max_id,
         })
-        console.log(this.state.max_id);
       })
   }
 
@@ -68,7 +60,7 @@ class App extends Component {
           <div className="row" style={{marginTop:"3em"}}>
             <ul className="actions">
               <li>
-                <a href="#" onClick={() => this.fetchPhotos() } className="button special icon fa-download">Загрузить ещё</a>
+                <button href="#" onClick={this.fetchPhotos} className="button special icon fa-download">Загрузить ещё</button>
               </li>
             </ul>
             </div>
@@ -77,10 +69,6 @@ class App extends Component {
       </div>
     );
   }
-
-  
 }
-
-
 
 export default App;
