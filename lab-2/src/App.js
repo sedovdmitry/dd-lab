@@ -1,38 +1,50 @@
 import React, { Component } from 'react';
-//import request from 'superagent';
+import SearchBoxUser from './components/SearchBoxUser';
+import ChoosedUser from './components/ChoosedUser';
+import users from './data/users.json';
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            searchBoxUsers: users,
+            user: {},
+            isUserChoosed: false,
+        }
+    }
+
+    handleUserClick(user,event) {
+        this.setState({user: user});
+        this.setState({isUserChoosed: true});
+    }
+
     render() {
+        const choosedUser = this.state.isUserChoosed && <ChoosedUser data={this.state.user} />
+        console.log(this.state.user);
+        console.log(this.state.isUserChoosed);
       return (
         <div className="container">
+            <h1>Address Book</h1>
             <div className="cards">
                 <div className="card">
                     <span className="card-summary">
-                        <input type="text" placeholder="Filter..." />
+                        <input type="text" placeholder="Filter..."  />
                     </span>
                     <span className="card-summary">
-                        jkjkjkkj
+                        <ul>
+                            {this.state.searchBoxUsers.map(user => (
+                                <SearchBoxUser 
+                                    key={user.id} 
+                                    name={user.name} 
+                                    onClick={e => this.handleUserClick(user,e)}
+                                />
+                            ))}
+                        </ul>
                     </span>
                 </div>
-                <div className="card player-card">
-                    <header>
-                        <a class="profile">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/rhmGrZQv.jpg" alt="Profile Image"/>
-                        </a>
-                    </header>
-                    <span className="card-header" >
-                        <span className="card-title">
-                            <h3>This is a title for a card</h3>
-                        </span>
-                    </span>
-                    <span className="card-summary">
-                        Using Flexbox is such a an easy, well supported way for grid-style content, such as cards. The cards height will expand to match the longest item.
-                        Using Flexbox is such a an easy, well supported way for grid-style content, such as cards. The cards height will expand to match the longest item.
-                    </span>
-                    <span className="card-meta">
-                        Published: June 18th, 2015
-                    </span>
-                </div>
+                
+                {choosedUser}
+
             </div>
         </div>
       );

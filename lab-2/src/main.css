@@ -164,6 +164,20 @@ img {
   border-radius: 50%;
 }
 
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+}
+
 body {
   background: #f0f0f0;
   font-size: 17px;
