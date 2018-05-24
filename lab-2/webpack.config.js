@@ -55,12 +55,12 @@ const config = {
         }),
 
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './index.html'
         }),
     ],
 
     devServer: {
-        port: 3000
+        port: 3001
     }
 }
 
