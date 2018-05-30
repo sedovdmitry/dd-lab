@@ -1,0 +1,20 @@
+{
+  "name": "dd-lab",
+  "version": "1.0.0",
+  "description": "[demo](https://pensive-einstein-224fc6.netlify.com/)\r [![N|Solid](instagram-react/Screenshot_insta.jpg)](https://pensive-einstein-224fc6.netlify.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sedovdmitry/dd-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sedovdmitry/dd-lab/issues"
+  },
+  "homepage": "https://github.com/sedovdmitry/dd-lab#readme"
+}
