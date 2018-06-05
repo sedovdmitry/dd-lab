@@ -1,0 +1,60 @@
+/* *********************************
+* Mobile *
+**********************************/
+
+@media all and (max-width: 800px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px, 5px;
+    }
+    .wrapper {
+        flex-flow: wrap;
+        flex-direction: column;
+    }
+    .navMobile, .nav {
+        flex-direction: column;
+    }
+    /* very stupid decision start*/
+    .last-elem {
+        margin: 165px 0;
+    }
+    .headerMobile {
+        margin-top: 20px;
+        margin-bottom: 75px;
+    }
+    /* very stupid decision end */
+    .headerBackground {
+        background-color: white;
+    }
+    .flexColumnReverse {
+        flex-flow: column-reverse;
+    }
+   .marginRight, .asideBlock {
+       margin-right: 0px;
+    }
+   .mobileContainer {
+       flex-flow: column;
+    }
+    .main {
+        display: flex;
+        flex: 1 0px;
+    }
+    .main .mainImg {
+        max-width:100%;
+    }
+    .aside-1 {
+        order: 1;
+        flex: 1;
+    }
+    .main {
+        order: 2;
+    }
+    .submain {
+        display: flex;
+        flex: 1 0px;
+    }
+    .submain-aside {
+        flex: 1 0px;
+    }
+}

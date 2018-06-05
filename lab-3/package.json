@@ -4,6 +4,7 @@
   "description": "flexbox layout with webpack",
   "main": "index.js",
   "dependencies": {
+    "reset-css": "^4.0.1",
     "webpack": "^3.12.0"
   },
   "devDependencies": {

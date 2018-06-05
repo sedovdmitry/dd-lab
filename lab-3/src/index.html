@@ -7,8 +7,8 @@
 </head>
 <body>
     <div class="container flexContainer flexColumn">
-        <h1 class="height50 marginBottom">Flexbox Layout</h1>
-        <nav class="flexContainer marginBottom headerBackground">
+        <h1 class="headerMobile marginBottom">Flexbox Layout</h1>
+        <nav class="flexContainer marginBottom headerBackground navMobile">
             <ul class="nav flexStart">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Contacts</a></li>
@@ -23,12 +23,12 @@
         <div class="wrapper">
             <aside class="aside aside-1">
                 <div class="flexItem asideBlock">
-                    <img width="100%" height="auto" src="assets/media/ocean.jpg" />
+                    <img width="100%"width="100%" height="auto" src="assets/media/ocean.jpg" />
                     <div class="blockContent">
                         <h3>Hello World</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus fuga animi magni, facere nisi molestiae nulla dolore fugiat ducimus sit accusamus? Quidem vel, modi minima excepturi molestiae consequatur optio.</p>
                         <footer class="blockFooter ">
-                            <span class="blockFooter__name flexItem flexStart">Jhon Doe</span>
+                            <span class="flexItem flexStart">Jhon Doe</span>
                             <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
                         </footer>
                     </div>
@@ -38,28 +38,83 @@
                         <h3>Hello World</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <footer class="blockFooter ">
-                            <span class="blockFooter__name flexItem flexStart">Jhon Doe</span>
+                            <span class="flexItem flexStart">Jhon Doe</span>
                             <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
                         </footer>
                     </div>
                 </div>
-                <div class="flexItem asideBlock margin-top">
+                <div class="flexItem asideBlock margin-top marginBottom-15">
                     <div class="blockContent">
                         <h3>Hello World</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <footer class="blockFooter ">
-                            <span class="blockFooter__name flexItem flexStart">Jhon Doe</span>
+                            <span class="flexItem flexStart">Jhon Doe</span>
                             <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
                         </footer>
                     </div>
                 </div>
             </aside>
-            <article class="main">
-                <p class="flexItem">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                <div class="flexItem">
-                    <img class="mainImg" src="assets/media/traveler.jpg" height="auto" alt="traveler">
-                </div>                
-            </article>
+            <div class="main wrap">
+                <div class="flexContainer whiteBackground marginBottom-15 flexColumnReverse">
+                    <div class="flexItem blockContent">
+                        <h3>Hello World</h3>
+                        <p class="flexItem ">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <footer class="blockFooter ">
+                            <span class="flexItem flexStart">Jhon Doe</span>
+                            <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
+                        </footer>
+                    </div>
+                    <div class="flexItem">
+                        <img class="mainImg" src="assets/media/traveler.jpg" width="100%" height="auto" alt="traveler">
+                    </div>
+                </div>
+                <div class="flexContainer flexAutoHeight mobileContainer">
+                    <div class="submain whiteBackground flexColumn flexItem2 marginRight">
+                        <div class="flexItem">
+                            <img class="mainImg" src="assets/media/travelers.jpg"width="100%" height="auto" alt="travelers">
+                        </div>
+                        <div class="flexItem blockContent">
+                            <h3>Hello World</h3>
+                            <p class="flexItem ">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <footer class="blockFooter ">
+                                <span class="flexItem flexStart">Jhon Doe</span>
+                                <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
+                            </footer>
+                        </div>   
+                    </div>
+                    <div class="sub-aside flexColumn flexItem">
+                        <div class="whiteBackground marginBottom-15">
+                            <img class="mainImg" src="assets/media/beach.jpg"width="100%" height="auto" alt="beach">
+                            <div class="blockContent">
+                                <h3>Hello World</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <footer class="blockFooter ">
+                                    <span class="flexItem flexStart">Jhon Doe</span>
+                                    <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
+                                </footer>
+                            </div>
+                        </div>
+    
+                        <div class="whiteBackground marginBottom-15 blockContent">
+                            <h3>Hello World</h3>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <footer class="blockFooter ">
+                                <span class="flexItem flexStart">Jhon Doe</span>
+                                <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
+                            </footer>
+                        </div>
+
+                        <div class="whiteBackground marginBottom-15 blockContent">
+                            <h3>Hello World</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <footer class="blockFooter ">
+                                <span class="flexItem flexStart">Jhon Doe</span>
+                                <span class="blockFooter__comments flexItem flexEnd">42 comments</span>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>    
     </div>
     
