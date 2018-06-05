@@ -34,8 +34,8 @@ const config = {
       //html-loader
       { test: /\.html$/, use: ['html-loader'] },//sass-loader
       {
-        test: /\.scss$/,
-        include: [path.resolve(__dirname, 'src', 'assets', 'scss')],
+        test: /\.s?css$/,
+        //include: [path.resolve(__dirname, 'src', 'assets', 'scss')],
         use: extractPlugin.extract({
           use: [
             {

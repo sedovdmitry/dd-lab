@@ -25,9 +25,9 @@ class App extends Component {
     }
 
     render() {
-        const choosedUser = this.state.isUserChoosed && <ChoosedUser data={this.state.user} />
         const filteredUsers = users.filter(
             (user) => {
+                const field = ['name']
                 let searchingByFields = '';
                 let searchStateWithoutField = this.state.search.replace(/.*:/i,'');
                 if (this.state.search.indexOf(':') !== -1) {
@@ -71,7 +71,7 @@ class App extends Component {
                     </span>
                 </div>
                 
-                {choosedUser}
+                {this.state.isUserChoosed && <ChoosedUser data={this.state.user} />}
 
             </div>
         </div>
