@@ -1,9 +1,9 @@
 <template>
   <div class="grid flexItem2">
       <div v-for="data in eventsToday" :key="data.id" class="submain whiteBackground flexColumn flexItem marginRight">
-        <div class="flexItem blockContent">
+        <div class="flexItem blockContent" :class="{ important: data.important }">
           <div class="flexContainer">
-            <span class="flexItem flexStart"><h3>{{data.event.type}}</h3></span>
+            <span class="flexItem flexStart"><h3>{{data.event.name}}</h3></span>
             <span class="flexItem flexEnd deleteEvent"></span>
           </div>
           <div class="flex-center">
@@ -13,13 +13,13 @@
             </div>
           </div>
           <footer class="blockFooter ">
-                    <div class="flexItem">
-                      <img :src="data.person.image" width="50px" height="50px" />
-                    </div>
-                    <ul class="list flexItem2">
-                      <li>{{data.person.name}}</li>
-                      <li>{{data.person.job}}</li>
-                    </ul>
+            <div class="flexItem">
+              <img :src="data.person.image" width="50px" height="50px" />
+            </div>
+            <ul class="list flexItem2">
+              <li>{{data.person.name}}</li>
+              <li>{{data.person.job}}</li>
+            </ul>
           </footer>
         </div>
       </div>
@@ -30,8 +30,11 @@ export default {
   name: 'TodayEvents',
   data () {
     return {
-      countEvents: 16
+
     }
+  },
+  computed: {
+
   },
   props: {
     eventsToday: {
@@ -39,6 +42,11 @@ export default {
       required: true,
       default: function () {}
     }
+  },
+  eventsTypes: {
+    type: Array,
+    required: true,
+    default: []
   }
 }
 </script>
@@ -74,5 +82,8 @@ export default {
 .flex-item-center {
     margin: 5px;
     text-align: center;
+}
+.important {
+  background-color: rgb(145, 38, 56);
 }
 </style>

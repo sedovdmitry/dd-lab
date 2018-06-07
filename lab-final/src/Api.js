@@ -12,16 +12,14 @@ export class Api {
   getEventsTypes () {
     return this.instance.request({
       type: 'get',
-      url: 'event-types/',
-      timeout: 1000
+      url: 'event-types/'
     })
   }
 
   getEvents () {
     return this.instance.request({
       type: 'get',
-      url: 'events/',
-      timeout: 1000
+      url: 'events/'
     })
   }
 
